@@ -31,7 +31,7 @@
         static void Main(string[] args)
         {
             Bus bus = new Bus();
-            bus.
+            //bus.
         }
     }
 }

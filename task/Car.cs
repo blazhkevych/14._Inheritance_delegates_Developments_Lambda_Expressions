@@ -13,31 +13,24 @@ namespace task
         public string Model { get; set; }
         public int Speed { get; set; }
         public int MaxSpeed { get; set; }
+        
+        public int Weight { get; set; }
 
         // Random speed generator.
-        public  void RandomSpeed()
+        public void RandomSpeed()
         {
             Random rnd = new Random();
             Speed = rnd.Next(0, MaxSpeed);
         }
-
-        // Method for getting car type.
-        public string GetCarType()
-        {
-            return this.GetType().Name;
-        }
-
+        
         // Method for getting car info.
-        public string GetCarInfo()
+        public virtual string GetCarInfo()
         {
-            return $"Car type: {GetCarType()}, Model: {Model}, Speed: {Speed}";
+            return "Model: " + Model + " Speed: " + Speed + " MaxSpeed: " + MaxSpeed;
         }
 
-        // Рисунок машины.
+        // Method for drawing car.
         public abstract void DrawCar();
-
-
-
 
 
     }

@@ -8,5 +8,11 @@ namespace task
 {
     internal class CargoCar: Car
     {
+        // Finish event.
+        public event EventHandler Finish;
+        public override void DrawCar()
+        {
+
+        }
     }
 }
