@@ -15,6 +15,8 @@ namespace task
         // Событие обновления гонки.
         public event RaceEvent UpdateEvent;
 
+        // Паттерн "Singleton".
+
         private static Game _instance = null;
         public static Game Instance
         {
