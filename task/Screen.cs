@@ -34,7 +34,7 @@ namespace task
         public static void DrawCar(Car car, int nTrack)
         {
             // вычислить позицию машини на экране
-            int traveled = (int)(car.TraveledDistance / RacingGame.GridSize);
+            int traveled = (int)(car.TraveledDistance / Game.GridSize);
             int left = (int)(_LEFT_OFFSET + traveled);
             int top = (int)(((nTrack - 1) * _TRACK_HEIGHT) + _TOP_OFFSET);
 
@@ -46,7 +46,7 @@ namespace task
         public static void DrawRaceInfo(List<Car> cars)
         {
             int top = (int)(Console.WindowHeight - _TOP_OFFSET - 1);
-            top -= RacingGame.NumberOfCars;
+            top -= Game.NumberOfCars;
 
             List<Car> sorted = cars.OrderBy(x => x.TraveledDistance).ToList();
             sorted.Reverse();
@@ -58,7 +58,7 @@ namespace task
                     "RANK", "CAR NAME", "CAR MODEL", "SPEED");
             Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
 
-            for (int i = 0; i < RacingGame.NumberOfCars; ++i)
+            for (int i = 0; i < Game.NumberOfCars; ++i)
             {
                 string fmt = String.Format(
                     "| №{0, -1} | {1, -16} | {2, -12} | {3, -3} km/h |",
@@ -75,7 +75,7 @@ namespace task
         // Нарисовать произовольное сообщение на экране
         public static void DrawMessage(string msg)
         {
-            int top = (int)((RacingGame.NumberOfCars * _TRACK_HEIGHT) + _TOP_OFFSET);
+            int top = (int)((Game.NumberOfCars * _TRACK_HEIGHT) + _TOP_OFFSET);
             Console.SetCursorPosition(_LEFT_OFFSET, top + 2);
             for (int i = 0; i < _TRACK_WIDTH; ++i)
                 Console.WriteLine(' ');

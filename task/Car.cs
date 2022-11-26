@@ -49,8 +49,8 @@ namespace task
             _reachedMaxSpeed = false;
 
             // Подписка на события гонки: её начало и обновление.
-            RacingGame.Instance.StartEvent += Start;
-            RacingGame.Instance.UpdateEvent += Update;
+            Game.Instance.StartEvent += Start;
+            Game.Instance.UpdateEvent += Update;
         }
     }
 }
