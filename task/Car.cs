@@ -10,13 +10,13 @@ internal delegate void RaceEvent();
 internal abstract class Car
 {
     protected int _accelerationSpeed;
-    protected bool _reachedMaxSpeed;
+    private bool _reachedMaxSpeed;
 
     // Поля для внутреннего использования.
     protected int _speedRange;
 
     // Конструктор с параметрами.
-    public Car(string name, string model, int speed)
+    protected Car(string name, string model, int speed)
     {
         Name = name;
         Model = model;
@@ -35,9 +35,9 @@ internal abstract class Car
     public string Model { get; protected set; }
     public int Speed { get; protected set; }
     public string Graphics { get; protected set; }
-    public int TraveledDistance { get; protected set; }
+    public int TraveledDistance { get; private set; }
 
-    public int CurrentSpeed { get; protected set; }
+    public int CurrentSpeed { get; private set; }
 
     // Событие достижения машиной финишной линии.
     public event CarEvent FinishedEvent;
@@ -63,13 +63,13 @@ internal abstract class Car
     }
 
     // Начать гонку.
-    protected virtual void Start()
+    private void Start()
     {
         Screen.DrawMessage($"\"{Name}\" started!");
     }
 
     // Обноаить состояние машины.
-    protected virtual void Update()
+    private void Update()
     {
         ChangeSpeed();
 
