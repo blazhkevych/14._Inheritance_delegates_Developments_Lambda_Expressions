@@ -36,7 +36,7 @@
             // Очистить консоль и спрятать курсор.
             Console.Clear();
             Console.CursorVisible = false;
-
+            
             // Приготовить машины к гонке.
             Game.Instance.PrepareCars();
             // Начать гонку.
