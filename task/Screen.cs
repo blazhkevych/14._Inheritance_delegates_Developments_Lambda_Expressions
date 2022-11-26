@@ -20,14 +20,14 @@ namespace task
             int top = (int)(((nTrack - 1) * _TRACK_HEIGHT) + _TOP_OFFSET);
             Console.SetCursorPosition(_LEFT_OFFSET, top);
 
-            Console.WriteLine('|');
+            Console.Write('|');
             for (int i = 0, len = (int)(_TRACK_WIDTH - 3); i < len; ++i)
-                Console.WriteLine('_');
+                Console.Write('_');
 
             if ((nTrack & 1) == 0)
-                Console.WriteLine("|# ");
+                Console.Write("|# ");
             else
-                Console.WriteLine("| #");
+                Console.Write("| #");
         }
 
         // Нарисовать машину на заданной дорожке
@@ -39,7 +39,7 @@ namespace task
             int top = (int)(((nTrack - 1) * _TRACK_HEIGHT) + _TOP_OFFSET);
 
             Console.SetCursorPosition(left, top);
-            Console.WriteLine(car.Graphics);
+            Console.Write(car.Graphics);
         }
 
         // Нарисовать информацию о гонке
@@ -52,9 +52,9 @@ namespace task
             sorted.Reverse();
 
             Console.SetCursorPosition(_LEFT_OFFSET, top);
-            Console.WriteLine("/-------------------------------------------------\\");
+            Console.Write("/-------------------------------------------------\\");
             Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
-            Console.WriteLine("|{0, -4}| {1, -16} | {2, -12} | {3, -8} |",
+            Console.Write("|{0, -4}| {1, -16} | {2, -12} | {3, -8} |",
                     "RANK", "CAR NAME", "CAR MODEL", "SPEED");
             Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
 
@@ -65,19 +65,11 @@ namespace task
                     i + 1, sorted[i].Name, sorted[i].Model, sorted[i].CurrentSpeed
                 );
 
-                Console.WriteLine(fmt);
-                try
-                {
-                    Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    //throw;
-                }
+                Console.Write(fmt);
+                Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
             }
 
-            Console.WriteLine("\\-------------------------------------------------/");
+            Console.Write("\\-------------------------------------------------/");
         }
 
         // Нарисовать произовольное сообщение на экране.
@@ -86,10 +78,10 @@ namespace task
             int top = (int)((Game.NumberOfCars * _TRACK_HEIGHT) + _TOP_OFFSET);
             Console.SetCursorPosition(_LEFT_OFFSET, top + 2);
             for (int i = 0; i < _TRACK_WIDTH; ++i)
-                Console.WriteLine(' ');
+                Console.Write(' ');
             Console.SetCursorPosition(_LEFT_OFFSET, top + 2);
 
-            Console.WriteLine($"Latest Info: {msg}");
+            Console.Write($"Latest Info: {msg}");
         }
     }
 }
