@@ -41,7 +41,8 @@ namespace task
         public void PrepareCars()
         {
             // Инициализировать список машин.
-            _cars = new List<Car> {
+            _cars = new List<Car> 
+            {
                 new PassengerCar("Dad's Jiguli", "Kopejka", RNG.Nextint(180, 20)),
                 new CargoCar("Contra de Banda", "DJI-Mavic", RNG.Nextint(150, 25)),
                 new Bus("To Kyiv for 200 UAH.", "9cX221", RNG.Nextint(190, 30)),
