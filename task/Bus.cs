@@ -11,8 +11,8 @@ namespace task
         public Bus(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.Nextint(2);
-            _accelerationSpeed = RNG.Nextint(4);
+            _speedRange = RNG.NextInt(2);
+            _accelerationSpeed = RNG.NextInt(4);
             Graphics = "EO0)";
         }
     }

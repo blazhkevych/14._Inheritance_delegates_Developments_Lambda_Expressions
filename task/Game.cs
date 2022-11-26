@@ -43,10 +43,10 @@ namespace task
             // Инициализировать список машин.
             _cars = new List<Car> 
             {
-                new PassengerCar("Dad's Jiguli", "Kopejka", RNG.Nextint(180, 20)),
-                new CargoCar("Contra de Banda", "DJI-Mavic", RNG.Nextint(150, 25)),
-                new Bus("To Kyiv for 200 UAH.", "9cX221", RNG.Nextint(190, 30)),
-                new SportCar("Neighbor on electric car", "Tesla", RNG.Nextint(210, 35))
+                new PassengerCar("Dad's Jiguli", "Kopejka", RNG.NextInt(180, 20)),
+                new CargoCar("Contra de Banda", "DJI-Mavic", RNG.NextInt(150, 25)),
+                new Bus("To Kyiv for 200 UAH.", "9cX221", RNG.NextInt(190, 30)),
+                new SportCar("Neighbor on electric car", "Tesla", RNG.NextInt(210, 35))
             };
 
             for (int i = 0; i < _cars.Count; ++i)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task
 {
-    // Воспомагательный класс для генерации случайных чисел
+    // Вспомагательный класс для генерации случайных чисел.
     internal sealed class RNG
     {
         private static Random r = null;
@@ -21,15 +21,15 @@ namespace task
             }
         }
 
-        // Сгенерировать случайный байт вокруг заданного значения
-        public static byte NextByte(byte v, byte spray = 0)
+        // Сгенерировать случайный байт вокруг заданного значения.
+        public static int NextInt(int v, int spray = 0)
         {
-            byte offset = (spray == 0)
-                ? (byte)(R.Next() % (v / 2))
-                : (byte)(R.Next() % spray);
+            int offset = (spray == 0)
+                ? (int)(R.Next() % (v / 2))
+                : (int)(R.Next() % spray);
 
             bool offsetPositive = (R.Next() & 1) == 0;
-            return offsetPositive ? (byte)(v + offset) : (byte)(v - offset);
+            return offsetPositive ? (int)(v + offset) : (int)(v - offset);
         }
     }
 }

@@ -11,8 +11,8 @@ namespace task
         public Truck(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.Nextint(2);
-            _accelerationSpeed = RNG.Nextint(3);
+            _speedRange = RNG.NextInt(2);
+            _accelerationSpeed = RNG.NextInt(3);
             Graphics = "###-D";
         }
     }

@@ -11,8 +11,8 @@ namespace task
         public PassengerCar(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.Nextint(3);
-            _accelerationSpeed = RNG.Nextint(6);
+            _speedRange = RNG.NextInt(3);
+            _accelerationSpeed = RNG.NextInt(6);
             Graphics = "EH3";
         }
     }
