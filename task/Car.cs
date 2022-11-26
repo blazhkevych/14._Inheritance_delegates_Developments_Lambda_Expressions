@@ -24,7 +24,7 @@ namespace task
         }
         
         // Method for getting car info.
-        public virtual string GetCarInfo()
+        public  string GetCarInfo()
         {
             return "Model: " + Model + " Speed: " + Speed + " MaxSpeed: " + MaxSpeed;
         }
