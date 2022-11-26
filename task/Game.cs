@@ -29,7 +29,7 @@ namespace task
         // Публичные статические поля.
         public static readonly int NumberOfCars = 4;
         public static readonly int TrackLength = 8000;
-        public static readonly int GridSize = (int)(TrackLength / Screen._TRACK_WIDTH);
+        public static readonly int GridSize = (int)(TrackLength / Screen._TRACK_WIDTH); 
 
         // Поля для внутреннего пользования.
         private List<Car> _cars;
@@ -40,7 +40,7 @@ namespace task
         {
             // Инициализировать список машин.
             _cars = new List<Car> {
-                new PassengerCar("Dad's Jiguli", "Shestyorka", RNG.Nextint(180, 20)),
+                new PassengerCar("Dad's Jiguli", "Kopejka", RNG.Nextint(180, 20)),
                 new CargoCar("Contra de Banda", "ABC-123", RNG.Nextint(150, 25)),
                 new Bus("To Kyiv for 200 UAH.", "8qX221", RNG.Nextint(190, 30)),
                 new SportCar("Neighbor on electric cart", "Tesla", RNG.Nextint(210, 35)),

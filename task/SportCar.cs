@@ -8,11 +8,11 @@ namespace task
 {
     internal class SportCar : Car
     {
-        public RacingCar(string name, string model, byte speed)
+        public RacingCar(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.NextByte(4);
-            _accelerationSpeed = RNG.NextByte(8);
+            _speedRange = RNG.Nextint(4);
+            _accelerationSpeed = RNG.Nextint(8);
             Graphics = "|O->";
         }
     }

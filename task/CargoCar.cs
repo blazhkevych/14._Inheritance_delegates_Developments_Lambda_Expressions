@@ -8,11 +8,11 @@ namespace task
 {
     internal class CargoCar: Car
     {
-        public Truck(string name, string model, byte speed)
+        public Truck(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.NextByte(2);
-            _accelerationSpeed = RNG.NextByte(3);
+            _speedRange = RNG.Nextint(2);
+            _accelerationSpeed = RNG.Nextint(3);
             Graphics = "###-D";
         }
     }

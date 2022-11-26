@@ -8,11 +8,11 @@ namespace task
 {
     internal class Bus: Car
     {
-        public Bus(string name, string model, byte speed)
+        public Bus(string name, string model, int speed)
             : base(name, model, speed)
         {
-            _speedRange = RNG.NextByte(2);
-            _accelerationSpeed = RNG.NextByte(4);
+            _speedRange = RNG.Nextint(2);
+            _accelerationSpeed = RNG.Nextint(4);
             Graphics = "EO0)";
         }
     }

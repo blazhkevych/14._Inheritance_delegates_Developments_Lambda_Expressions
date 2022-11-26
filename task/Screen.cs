@@ -72,7 +72,7 @@ namespace task
             Console.WriteLine("\\-------------------------------------------------/");
         }
 
-        // Нарисовать произовольное сообщение на экране
+        // Нарисовать произовольное сообщение на экране.
         public static void DrawMessage(string msg)
         {
             int top = (int)((Game.NumberOfCars * _TRACK_HEIGHT) + _TOP_OFFSET);
