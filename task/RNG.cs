@@ -15,7 +15,7 @@ internal sealed class RNG
         }
     }
 
-    //Сгенерировать случайный байт вокруг заданного значения.
+    // Сгенерировать случайное число вокруг заданного значения.
     public static int NextInt(int v, int spray = 0)
     {
         var offset = spray == 0

@@ -30,11 +30,11 @@ internal abstract class Car
         Game.Instance.UpdateEvent += Update;
     }
 
-    // Публичные поля
+    // Публичные поля.
     public string Name { get; protected set; }
     public string Model { get; protected set; }
     public int Speed { get; protected set; }
-    public string Graphics { get; protected set; }
+    public string Graphics { get; protected init; }
     public int TraveledDistance { get; private set; }
 
     public int CurrentSpeed { get; private set; }
