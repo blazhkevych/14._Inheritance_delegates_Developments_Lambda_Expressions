@@ -7,6 +7,6 @@ internal class Bus : Car
     {
         _speedRange = RNG.NextInt(2);
         _accelerationSpeed = RNG.NextInt(4);
-        Graphics = "0_0)";
+        Graphics = "0_0";
     }
 }
