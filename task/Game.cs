@@ -42,8 +42,8 @@ namespace task
             _cars = new List<Car> {
                 new PassengerCar("Dad's Jiguli", "Shestyorka", RNG.Nextint(180, 20)),
                 new CargoCar("Contra de Banda", "ABC-123", RNG.Nextint(150, 25)),
-                new Bus("80 grn to Kyiv", "8qX221", RNG.Nextint(190, 30)),
-                new SportCar("Need for Speeds", "Y0L0", RNG.Nextint(210, 35)),
+                new Bus("To Kyiv for 200 UAH.", "8qX221", RNG.Nextint(190, 30)),
+                new SportCar("Neighbor on electric cart", "Tesla", RNG.Nextint(210, 35)),
             };
 
             for (int i = 0; i < _cars.Count; ++i)
