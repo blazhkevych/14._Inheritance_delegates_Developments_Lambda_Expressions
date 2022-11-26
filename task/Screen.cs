@@ -66,7 +66,15 @@ namespace task
                 );
 
                 Console.WriteLine(fmt);
-                Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
+                try
+                {
+                    Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    //throw;
+                }
             }
 
             Console.WriteLine("\\-------------------------------------------------/");
