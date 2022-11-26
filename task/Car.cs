@@ -34,8 +34,8 @@ namespace task
         // Method for drawing car.
         public abstract void DrawCar();
 
-        // Constructor
-
+        // Constructor.
+        
 
     }
 }
