@@ -35,7 +35,10 @@ namespace task
         // Сгенерировать случайное число вокруг заданного значения.
         public static int NextInt(int v, int spray = 0)
         {
-            if(spray == 0)
+            if (spray == 0)
+            {
+
+            }
         }
     }
 }
