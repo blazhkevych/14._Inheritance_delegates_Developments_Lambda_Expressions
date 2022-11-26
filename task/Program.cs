@@ -30,8 +30,9 @@
         /// </summary>
         static void Main(string[] args)
         {
-            Bus bus = new Bus();
-            //bus.
+            var game = new Game();
+            
+            
         }
     }
 }

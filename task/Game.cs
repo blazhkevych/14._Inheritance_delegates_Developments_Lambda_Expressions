@@ -14,6 +14,8 @@ namespace task
         // Список автомобилей.
         private List<Car> cars = new List<Car>();
 
+        public double KilometersLeftInTheRace { get; set; }     
+
         // Конструктор.
         public Game()
         {

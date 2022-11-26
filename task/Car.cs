@@ -8,13 +8,14 @@ using System.Xml.Linq;
 
 namespace task
 {
+    internal delegate int MyDelegate();
+
     internal abstract class Car
     {
         public string Model { get; set; }
         public int Speed { get; set; }
         public int MaxSpeed { get; set; }
         
-        public int Weight { get; set; }
 
         // Random speed generator.
         public void RandomSpeed()
