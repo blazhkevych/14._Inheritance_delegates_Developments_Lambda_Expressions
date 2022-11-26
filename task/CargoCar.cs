@@ -8,7 +8,7 @@ namespace task
 {
     internal class CargoCar: Car
     {
-        public Truck(string name, string model, int speed)
+        public CargoCar(string name, string model, int speed)
             : base(name, model, speed)
         {
             _speedRange = RNG.NextInt(2);

@@ -52,5 +52,55 @@ namespace task
             Game.Instance.StartEvent += Start;
             Game.Instance.UpdateEvent += Update;
         }
+
+        // Изменить текущую скорость машины
+        private void ChangeSpeed()
+        {
+            CurrentSpeed += _accelerationSpeed;
+
+            int delta = (int)(RNG.R.Next() % _speedRange);
+            bool deltaPositive = (RNG.R.Next() & 1) == 0;
+
+            if (deltaPositive)
+                CurrentSpeed += delta;
+            else if (CurrentSpeed > delta)
+                CurrentSpeed -= delta;
+        }
+
+        // Начать гонку
+        protected virtual void Start()
+        {
+            Screen.DrawMessage($"\"{Name}\" started!");
+        }
+
+        // Обноаить состояние машины
+        protected virtual void Update()
+        {
+            ChangeSpeed();
+
+            // вызвать событие, если была достигнута максимальная скорость
+            if (CurrentSpeed >= Speed)
+            {
+                CurrentSpeed = Speed;
+
+                if (!_reachedMaxSpeed)
+                {
+                    MaxSpeedEvent?.Invoke(this);
+                    _reachedMaxSpeed = true;
+                }
+            }
+
+            int oldDist = (int)(TraveledDistance / Game.GridSize);
+            TraveledDistance += CurrentSpeed;
+            int newDist = (int)(TraveledDistance / Game.GridSize);
+
+            // вызвать событие, если позиция машины на экране должна быть обновлена
+            if (newDist != oldDist)
+                PositionChangedEvent?.Invoke(this);
+
+            // вызвать событие, если машина достигла линии финиша
+            if (TraveledDistance >= Game.TrackLength)
+                FinishedEvent?.Invoke(this);
+        }
     }
 }
