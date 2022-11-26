@@ -30,8 +30,21 @@
         /// </summary>
         static void Main(string[] args)
         {
-            
-            
+            // Изменить размер окна консоли.
+            Console.SetWindowSize(86, 28);
+
+            // Очистить консоль и спрятать курсор.
+            Console.Clear();
+            Console.CursorVisible = false;
+
+            // Приготовить машины к гонке.
+            Game.Instance.PrepareCars();
+            // Начать гонку.
+            Game.Instance.Start();
+
+            // Пауза программы перед её завершением.
+            Console.ReadKey();
+            Console.CursorVisible = true;
         }
     }
 }
