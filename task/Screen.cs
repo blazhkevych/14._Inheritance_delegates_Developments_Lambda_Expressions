@@ -51,7 +51,7 @@ namespace task
             List<Car> sorted = cars.OrderBy(x => x.TraveledDistance).ToList();
             sorted.Reverse();
 
-            Console.SetCursorPosition(_LEFT_OFFSET, top);
+            Console.SetCursorPosition(_LEFT_OFFSET, top-10);
             Console.Write("/-------------------------------------------------\\");
             Console.SetCursorPosition(_LEFT_OFFSET, Console.CursorTop + 1);
             Console.Write("|{0, -4}| {1, -16} | {2, -12} | {3, -8} |",
