@@ -48,7 +48,7 @@ internal abstract class Car
     // Событие для изменения машиной позиции на экране.
     public event CarEvent PositionChangedEvent;
 
-    // Изменить текущую скорость машины
+    // Изменить текущую скорость машины.
     private void ChangeSpeed()
     {
         CurrentSpeed += _accelerationSpeed;
@@ -62,18 +62,18 @@ internal abstract class Car
             CurrentSpeed -= delta;
     }
 
-    // Начать гонку
+    // Начать гонку.
     protected virtual void Start()
     {
         Screen.DrawMessage($"\"{Name}\" started!");
     }
 
-    // Обноаить состояние машины
+    // Обноаить состояние машины.
     protected virtual void Update()
     {
         ChangeSpeed();
 
-        // вызвать событие, если была достигнута максимальная скорость
+        // Вызвать событие, если была достигнута максимальная скорость.
         if (CurrentSpeed >= Speed)
         {
             CurrentSpeed = Speed;
@@ -89,11 +89,11 @@ internal abstract class Car
         TraveledDistance += CurrentSpeed;
         var newDist = TraveledDistance / Game.GridSize;
 
-        // вызвать событие, если позиция машины на экране должна быть обновлена
+        // Вызвать событие, если позиция машины на экране должна быть обновлена.
         if (newDist != oldDist)
             PositionChangedEvent?.Invoke(this);
 
-        // вызвать событие, если машина достигла линии финиша
+        // Вызвать событие, если машина достигла линии финиша.
         if (TraveledDistance >= Game.TrackLength)
             FinishedEvent?.Invoke(this);
     }
