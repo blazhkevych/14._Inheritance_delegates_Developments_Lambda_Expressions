@@ -15,7 +15,8 @@ namespace task
         public string Model { get; set; }
         public int Speed { get; set; }
         public int MaxSpeed { get; set; }
-        
+        public double KilometersLeftInTheRace { get; set; }
+
 
         // Random speed generator.
         public void RandomSpeed()
@@ -32,6 +33,8 @@ namespace task
 
         // Method for drawing car.
         public abstract void DrawCar();
+
+        // Constructor
 
 
     }
