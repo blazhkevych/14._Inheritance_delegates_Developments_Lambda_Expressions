@@ -8,13 +8,12 @@ namespace task
 {
     internal class SportCar : Car
     {
-        // Finish event.
-        public event EventHandler Finish;
-
-        public override void DrawCar()
+        public RacingCar(string name, string model, byte speed)
+            : base(name, model, speed)
         {
-
+            _speedRange = RNG.NextByte(4);
+            _accelerationSpeed = RNG.NextByte(8);
+            Graphics = "|O->";
         }
     }
 }
-// переопределить метод каринфо

@@ -62,44 +62,44 @@ namespace task
             Screen.DrawRaceInfo(_cars);
         }
 
-        // Начать гонку
+        // Начать гонку.
         public void Start()
         {
             _raceFinished = false;
 
-            // отсчёт до начала гонки
+            // Отсчёт до начала гонки.
             for (int i = 3; i > 0; --i)
             {
                 Screen.DrawMessage($"Race starts in {i}...");
                 Thread.Sleep(1000);
             }
 
-            // вызвать событие начала гонки
+            // Вызвать событие начала гонки.
             StartEvent?.Invoke();
             Screen.DrawMessage("Race started!!");
 
-            // обновлять состояние гонки, пока она не будет завершена
+            // Обновлять состояние гонки, пока она не будет завершена.
             while (!_raceFinished)
                 Update();
         }
 
-        // Обновить состояние гонки
+        // Обновить состояние гонки.
         private void Update()
         {
-            // вызвать событие обновления
+            // Вызвать событие обновления.
             UpdateEvent?.Invoke();
-            // задержка программы
+            // Задержка программы.
             Thread.Sleep(200);
         }
 
-        // Метод, исполняемый при достижении машиной максимальной скорости
+        // Метод, исполняемый при достижении машиной максимальной скорости.
         private void OnMaxSpeed(Car c)
         {
             if (!_raceFinished)
                 Screen.DrawMessage($"\"{c.Name}\" reached maximum speed! ({c.Speed} km/h)");
         }
 
-        // Метод, исполняемый при необходимости перерисовать машину
+        // Метод, исполняемый при необходимости перерисовать машину.
         private void OnCarPositionChanged(Car c)
         {
             int track = (int)(_cars.IndexOf(c) + 1);
@@ -108,7 +108,7 @@ namespace task
             Screen.DrawRaceInfo(_cars);
         }
 
-        // Метод, вызываемый по завершению гонки
+        // Метод, вызываемый по завершению гонки.
         private void OnFinish(Car c)
         {
             Screen.DrawMessage($"\"{c.Name}\" reached finish line! Race finished!!!");
