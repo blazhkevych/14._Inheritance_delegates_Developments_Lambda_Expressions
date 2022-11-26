@@ -8,11 +8,6 @@ namespace task
 {
     internal class PassengerCar : Car
     {
-        // Finish event.
-        public event EventHandler Finish;
-        public override void DrawCar()
-        {
-            
-        }
+       
     }
 }
